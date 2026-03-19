@@ -1,0 +1,189 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    background: radial-gradient(circle at 20% 30%, #ff9ecf, transparent 40%),
+                radial-gradient(circle at 80% 70%, #ff6ec7, transparent 40%),
+                radial-gradient(circle at 50% 50%, #d580ff, transparent 50%),
+                linear-gradient(135deg, #1a002f, #3a0ca3, #ff4ecd);
+}
+
+/* glitter galaxy */
+.glitter {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+
+    background-image: 
+        radial-gradient(white 1px, transparent 1px),
+        radial-gradient(pink 1px, transparent 1px);
+
+    background-size: 25px 25px, 40px 40px;
+    animation: galaxyMove 10s linear infinite;
+    opacity: 0.6;
+}
+
+@keyframes galaxyMove {
+    from { background-position: 0 0, 0 0; }
+    to { background-position: 100px 200px, -100px -200px; }
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* ⬅️ ini bikin semua ke tengah */
+    justify-content: center;
+
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+    min-height: 100vh;
+}
+.h1 {
+    color: white;
+    text-shadow: 0 0 10px pink, 0 0 20px violet;
+}
+
+.from {
+    color: white;
+    font-size: 13px;
+}
+
+.mingyu {
+    display:block;
+    width: 70%;
+    max-width: 220px;
+    border-radius: 20px;
+    margin: 15px auto;
+    animation: float 3s infinite;
+    box-shadow: 0 0 20px pink;
+}
+
+@keyframes float {
+    50% { transform: translateY(-10px); }
+}
+
+textarea {
+    width: 90%;
+    height: 100px;
+    border-radius: 15px;
+    border: none;
+    padding: 10px;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    background: pink;
+    border-radius: 20px;
+}
+
+/* jatuh */
+.star {
+    position: fixed;
+    top: -10px;
+    animation: fall linear infinite;
+    z-index: 1;
+}
+
+@keyframes fall {
+    to { transform: translateY(110vh); }
+}
+
+.mingyu-pop {
+    position: fixed;
+    z-index: 0;
+    border-radius: 10px;
+    pointer-events: none;
+
+    animation: fadeMingyu 4s ease-in-out;
+    box-shadow: 0 0 10px pink;
+}
+
+@keyframes fadeMingyu {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    30% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+}
+/* 💖 kotak aesthetic */
+.title-box {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 18px;
+    border-radius: 20px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 25px rgba(255, 182, 193, 0.6);
+    display: inline-block;
+    margin-bottom: 20px;
+    max-width: 90%;
+}
+
+/* ✨ judul */
+.title {
+    font-size: 23px;
+    font-weight: 600;
+    background: linear-gradient(90deg, #ff9ecf, #ffffff, #ff6ec7);
+    background-clip: text; 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 10px rgba(255,255,255,0.7);
+}
+
+/* 💌 isi teks */
+.subtitle {
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.6;
+    text-shadow: 0 0 6px rgba(255,255,255,0.5);
+}
+
+/* 💕 from (override yang lama) */
+.from {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #ffd6ec;
+    text-shadow: 0 0 6px rgb(43, 3, 3);
+}
+/* 💖 tombol play */
+button {
+    display: block;
+    margin: 10px auto;   /* ⬅️ center */
+    padding: 10px 15px;
+    border: none;
+    background: pink;
+    border-radius: 20px;
+}
+
+/* 💌 form */
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /* ⬅️ center isi form */
+}
+
+/* textarea */
+textarea {
+    width: 90%;
+    max-width: 300px;
+    height: 100px;
+    border-radius: 15px;
+    border: none;
+    padding: 10px;
+}
