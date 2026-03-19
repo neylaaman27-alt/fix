@@ -4,7 +4,7 @@ import os
 
 app = Flask(__name__)
 
-PASSWORD_ADMIN = "admin123"
+PASSWORD_ADMIN = "bidadari"
 
 def init_db():
     conn = sqlite3.connect("database.db")
